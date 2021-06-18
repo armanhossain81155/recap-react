@@ -3,17 +3,17 @@ import './App.css';
 import React, { useState } from 'react';
 
 function App() {
-  const heroes = ["Phil Greenberg","Juraj Husár","David Leong","Davor Badrov","Sebastian Kalinowski"]
-  const countSite = [150, 100, 80, 70, 50];
+  const heroes = [{name : 'Phil Greenberg', countSite: 150},{name : 'Juraj Husár', countSite : 100},{name : 'David Leong', countSite : 80 },{name : 'Davor Badrov', countSite : 70},{name : 'Sebastian Kalinowski', countSite : 50}]
+  
   return (
     <div className="App">
       <header className="App-header">
+        
       <Sitecounter></Sitecounter>
-      <Hero name = {heroes[0]} site = {countSite[0]}></Hero>
-      <Hero name = {heroes[1]} site = {countSite[1]}></Hero>
-      <Hero name = {heroes[2]} site = {countSite[2]}></Hero>
-      <Hero name = {heroes[3]} site = {countSite[3]}></Hero>
-      <Hero name = {heroes[4]} site = {countSite[4]}></Hero>
+          {
+              heroes.map(hero => <Hero name = {hero.name} site = {hero.countSite}></Hero>)
+            }
+            
       
       </header>
     </div>
